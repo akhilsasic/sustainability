@@ -1,0 +1,75 @@
+.parsed-excel-data {
+    font-family: 'jost', sans-serif;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .parsed-excel-data .table-row:first-child {
+    background-color: #00b15c; /* Green background */
+    color: white; /* White text */
+  }
+  
+  
+  .parsed-excel-data h3 {
+    font-size: 2rem;
+    margin: 2vh 0;
+    text-align: center;
+  }
+  
+  .parsed-excel-data ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .parsed-excel-data .table-row {
+    border-radius: 0.3rem;
+    padding: 2.5vh 3vw;
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2.5vh;
+    background-color: #ffffff;
+    box-shadow: 0 0 0.9vw 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .parsed-excel-data .col {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    width:auto;
+  }
+  
+  @media all and (max-width: 767px) {
+    .parsed-excel-data .table-header {
+      display: none;
+    }
+  
+    .parsed-excel-data .table-row {
+      box-shadow: none;
+      border-radius: 0.3rem;
+      padding: 2.5vh 3vw;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.5vh;
+      background-color: #ffffff;
+      box-shadow: 0 0 0.9vw 0 rgba(0, 0, 0, 0.1);
+    }
+  
+    .parsed-excel-data .col {
+      flex-basis: 100%;
+      display: flex;
+      width: max-content;
+      padding: 1vh 0;
+    }
+  
+    .parsed-excel-data .col:before {
+      color: #6C7A89;
+      padding-right: 1vw;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+    }
+  }
+  

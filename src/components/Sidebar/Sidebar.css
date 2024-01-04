@@ -1,13 +1,18 @@
 .sidebar {
-    width: 250px;
-    background-color: #f0f0f0;
-    padding: 1rem;
+    position: sticky;
+    top: 10vh;
+    height: 100vw;
+    width: 100%;
+    background-color: #fff;
+    border-right: 2px solid #f0f0f0;
+    font-weight: 500;
     font-family: 'Jost', sans-serif;
+    overflow: hidden;
   }
   
   .menu {
     list-style: none;
-    padding: 0;
+    padding: 2rem;
   }
   
   .menu li {

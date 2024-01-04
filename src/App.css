@@ -16,9 +16,8 @@ body {
 }
 
 /* App class */
-.App {
-  display: flex;
-  flex-direction: column;
+.App{
+
   height: 100vh;
 }
 
@@ -30,17 +29,12 @@ body {
 }
 
 /* Sidebar styling */
-.sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #f0f0f0;
-  padding: 1rem;
-}
+
 
 /* Sidebar menu items */
 .sidebar ul {
   list-style: none;
-  padding:1rem;
+  
 }
 
 .sidebar li {

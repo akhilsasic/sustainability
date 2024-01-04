@@ -1,6 +1,8 @@
 .visualization {
+    margin-top: 10vh;
     padding: 1rem;
     font-family: 'Jost', sans-serif;
+    width: 100%;
   }
   
   .visualization-header {
@@ -74,4 +76,8 @@
     height: 60%;
     border: 2px solid #f0f0f0;
     border-radius: 8px;
+  }
+
+  .view-options {
+    margin-top: 1rem;
   }
