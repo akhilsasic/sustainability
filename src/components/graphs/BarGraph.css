@@ -1,4 +1,3 @@
-/* BarGraph.css */
 .bar-graph {
     margin: 20px;
     padding: 20px;
@@ -8,12 +7,28 @@
   }
   
   .bar-graph h2 {
-    text-align: center;
+    text-align:left;
     margin-bottom: 20px;
   }
   
+ .head-graph { display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+
   .graph-container {
     position: relative;
     width: 100%;
   }
-  
+  .recharts-wrapper{
+    min-height: 350px;
+  }
+  .recharts-responsive-container{
+    min-height: 350px;
+  }
+
+  .head-graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

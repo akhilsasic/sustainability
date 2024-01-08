@@ -19,7 +19,92 @@
     margin-bottom: 1rem;
     position: relative;
   }
+  .visualization {
+    margin-top: 10vh;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+  }
+    
+    
+    .visualization-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .visualization-nav {
+      display: flex;
+      gap: 2rem;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .visualization-nav span {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .visualization-nav span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0;
+      background-color: transparent;
+      transition: width 0.5s ease;
+    }
+    
+    .visualization-nav span:focus::after,
+    .visualization-nav span:active::after {
+      width: 100%;
+      background-color: #00b15c;
+    }
+    
+    .visualization-nav span:hover::after {
+      width: 50%; /* Fill only half the length */
+      background-color: #00b15c; /* Change the color to your desired underline color */
+    }
   
+    .visual-box {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    
+  
+    .emissions-info h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .emissions-info p {
+      margin: 0;
+    }
+    
+    .scope-options {
+      margin-top: 1rem;
+    }
+    
+    .scope-options label {
+      margin-right: 0.5rem;
+    }
+    
+    .graph {
+      width: 100%;
+      height: 60%;
+      border: 2px solid #f0f0f0;
+      border-radius: 8px;
+    }
+  
+    .view-options {
+      margin-top: 1rem;
+    }
   .visualization-nav span {
     position: relative;
     cursor: pointer;

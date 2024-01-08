@@ -9,7 +9,7 @@ function Home() {
        <div className="main-container">
         <Sidebar/>
         <Visualization />     
-       </div>
+       </div>   
     </div>
   )
 }

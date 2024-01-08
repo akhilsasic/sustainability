@@ -1,8 +1,11 @@
 .sidebar {
-    position: sticky;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    top: 0;
     padding-top: 10vh;
     height: 100vw;
-    width: 100%;
+    width: 200px;
     background-color: #fff;
     border-right: 2px solid #f0f0f0;
     font-weight: 500;
@@ -24,4 +27,3 @@
     color: #00b15c;
     font-weight: bold;
   }
-  

@@ -3,6 +3,8 @@
 // import ExcelFile from '../graphs/ExcelData';
 // import ExcelFile2 from '../graphs/ExcelData2';
 // import Navbar from '../Navbar/Navbar';
+// import BarFile from '../graphs/BarGraph'; // Import your BarGraph components
+// import BarFile2 from '../graphs/BarGraph2'; // Import your BarGraph components
 
 // const Visualization = () => {
 //   const [selectedScope, setSelectedScope] = useState('scope1');
@@ -19,18 +21,26 @@
 //     }
 //   };
 
+//   const renderBarGraph = () => {
+//     switch (selectedScope) {
+//       case 'scope1':
+//         return <BarFile />;
+//       case 'scope2':
+//         return <BarFile2 />;
+//       default:
+//         return <BarFile />;
+//     }
+//   };
+
 //   const renderView = () => {
 //     switch (selectedView) {
 //       case 'sheet':
 //         return renderExcelData();
 //       case 'bar':
-//         // Return bar graph component
-//         return <div>Bar Graph</div>;
+//         return renderBarGraph();
 //       case 'area':
-//         // Return area chart component
 //         return <div>Area Chart</div>;
 //       case 'line':
-//         // Return line graph component
 //         return <div>Line Graph</div>;
 //       default:
 //         return renderExcelData();
@@ -100,6 +110,8 @@ import ExcelFile2 from '../graphs/ExcelData2';
 import Navbar from '../Navbar/Navbar';
 import BarFile from '../graphs/BarGraph'; // Import your BarGraph components
 import BarFile2 from '../graphs/BarGraph2'; // Import your BarGraph components
+import PieChart1 from '../graphs/PieChart1'; // Import your PieChart1 component
+import PieChart2 from '../graphs/PieChart2'; // Import your PieChart2 component
 
 const Visualization = () => {
   const [selectedScope, setSelectedScope] = useState('scope1');
@@ -127,6 +139,17 @@ const Visualization = () => {
     }
   };
 
+  const renderPieChart = () => {
+    switch (selectedScope) {
+      case 'scope1':
+        return <PieChart1 />;
+      case 'scope2':
+        return <PieChart2 />;
+      default:
+        return <PieChart1 />;
+    }
+  };
+
   const renderView = () => {
     switch (selectedView) {
       case 'sheet':
@@ -134,7 +157,7 @@ const Visualization = () => {
       case 'bar':
         return renderBarGraph();
       case 'area':
-        return <div>Area Chart</div>;
+        return renderPieChart();
       case 'line':
         return <div>Line Graph</div>;
       default:
