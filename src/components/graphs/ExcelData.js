@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ExcelData.css'; // Import the CSS file
 import * as XLSX from 'xlsx';
-import excelFile from './emission data.xlsx'; // Import the Excel file
+import excelFile from './EmissionsData.xlsx'; // Import the Excel file
 
 const ExcelData = () => {
   const [excelData, setExcelData] = useState([]);

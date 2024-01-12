@@ -135,6 +135,7 @@
   .visual-box {
     height: 100%;
     display: flex;
+    gap: 1vw;
     flex-direction: row;
   }
   
@@ -157,7 +158,7 @@
   }
   
   .graph {
-    width: 100%;
+    width: 90%;
     height: 60%;
     border: 2px solid #f0f0f0;
     border-radius: 8px;
@@ -166,3 +167,5 @@
   .view-options {
     margin-top: 1rem;
   }
+
+  

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import * as XLSX from 'xlsx';
 import excelFile from './EmissionsData.xlsx';
-import './BarGraph.css';
+import './LineGraph.css'; // Add your LineGraph specific CSS file if needed
 
 const getMonthName = (monthNumber) => {
   const monthNames = [
@@ -21,7 +21,6 @@ const customStyles = {
     color: state.isFocused ? 'white' : 'black', // Set text color to white when focused
     width: '120px', // Adjust width as needed
   }),
-  
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isFocused ? '#00b15c' : null, // Highlight on hover
@@ -35,9 +34,13 @@ const customStyles = {
     ...provided,
     color: 'black', // Set the color of the selected value
   }),
+  menu: (provided) => ({
+    ...provided,
+    width: '120px', // Set the width of the dropdown menu when expanded
+  }),
 };
 
-const BarGraph = ({ selectedScope }) => {
+const LineGraph = ({ selectedScope }) => {
   const [graphData, setGraphData] = useState([]);
   const [selectedYear, setSelectedYear] = useState('All');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -56,7 +59,7 @@ const BarGraph = ({ selectedScope }) => {
       const workbook = XLSX.read(fileData, { type: 'array' });
       const sheetNames = workbook.SheetNames;
 
-      const sheetIndex = 1;
+      const sheetIndex = 0;
       const selectedSheetName = sheetNames[sheetIndex];
 
       const worksheet = workbook.Sheets[selectedSheetName];
@@ -111,7 +114,7 @@ const BarGraph = ({ selectedScope }) => {
   const uniqueCategories = Array.from(new Set(parsedData.map((row) => row['Category'].trim())));
 
   return (
-    <div className="bar-graph">
+    <div className="line-graph">
       <div className="head-graph">
         <h2>
           Emission data for {selectedYear === 'All' ? 'All Years' : selectedYear}
@@ -149,23 +152,24 @@ const BarGraph = ({ selectedScope }) => {
       </div>
       <div className="graph-container">
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={graphData}>
+          <LineChart data={graphData}>
             <XAxis dataKey="month" textAnchor="middle" />
             <YAxis />
             <Tooltip cursor={{ fill: 'rgba(0, 177, 92, 0.15)' }} />
             <Legend />
-            <Bar
+            <Line
+              type="monotone"
               dataKey="emissions"
               name={`Total Emission`}
-              fill="rgba(0, 177, 92, 0.50)"
-              stroke="none"
-              barCategoryGap={5}
+              stroke="#00b15c"
+              strokeWidth={2}
+              dot={{ fill: '#00b15c', r: 5 }}
             />
-          </BarChart>
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </div>
   );
 };
 
-export default BarGraph;
+export default LineGraph;

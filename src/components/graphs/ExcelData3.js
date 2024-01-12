@@ -3,7 +3,7 @@ import './ExcelData.css'; // Import the CSS file
 import * as XLSX from 'xlsx';
 import excelFile from './EmissionsData.xlsx'; // Import the Excel file
 
-const ExcelData2 = () => {
+const ExcelData3 = () => {
   const [excelData, setExcelData] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const ExcelData2 = () => {
         const data = new Uint8Array(arrayBuffer);
 
         const workbook = XLSX.read(data, { type: 'array' });
-        const sheetName = workbook.SheetNames[1];
+        const sheetName = workbook.SheetNames[2];
         const worksheet = workbook.Sheets[sheetName];
         const parsedData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
@@ -48,4 +48,4 @@ const ExcelData2 = () => {
   );
 };
 
-export default ExcelData2;
+export default ExcelData3;

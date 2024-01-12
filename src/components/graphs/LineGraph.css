@@ -1,0 +1,34 @@
+/* LineGraph.css */
+
+.line-graph {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .line-graph h2 {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .head-graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .graph-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .recharts-wrapper {
+    min-height: 350px;
+  }
+  
+  .recharts-responsive-container {
+    min-height: 350px;
+  }
+  

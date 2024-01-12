@@ -56,7 +56,7 @@ const BarGraph = ({ selectedScope }) => {
       const workbook = XLSX.read(fileData, { type: 'array' });
       const sheetNames = workbook.SheetNames;
 
-      const sheetIndex = 1;
+      const sheetIndex = 2;
       const selectedSheetName = sheetNames[sheetIndex];
 
       const worksheet = workbook.Sheets[selectedSheetName];
