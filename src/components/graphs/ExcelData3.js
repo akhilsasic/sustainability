@@ -5,6 +5,7 @@ import excelFile from './EmissionsData.xlsx'; // Import the Excel file
 
 const ExcelData3 = () => {
   const [excelData, setExcelData] = useState([]);
+  const [totalGHGEmissions, setTotalGHGEmissions] = useState(0);
 
   useEffect(() => {
     const readFile = async () => {
@@ -23,6 +24,14 @@ const ExcelData3 = () => {
           Object.values(row).some(cell => cell !== '')
         );
 
+        // Calculate the sum of total GHG Emissions (assuming it's in the 3rd column)
+        const sumGHGEmissions = filteredData.reduce((sum, row) => {
+          const value = parseFloat(row[2]);
+          return isNaN(value) ? sum : sum + value;
+        }, 0);
+
+        setTotalGHGEmissions(sumGHGEmissions);
+
         setExcelData(filteredData);
       } catch (error) {
         console.error('Error fetching or parsing Excel file:', error);
@@ -34,12 +43,17 @@ const ExcelData3 = () => {
 
   return (
     <div className="parsed-excel-data">
-      <h3>Emission Data</h3>
+      <div className="sheet-head">
+        <h3>Emission Data</h3>
+        <div>Total Emission: <span style={{ color: '#00b15c', fontWeight: '500', fontSize: '1.2em'}}>{isNaN(totalGHGEmissions) ? 0 : totalGHGEmissions}</span> MTC02E</div>
+      </div> 
       <ul>
         {excelData.map((row, index) => (
           <li className="table-row" key={index}>
             {row.map((cell, cellIndex) => (
-              <div key={cellIndex} className={`col col-${cellIndex + 1}`} data-label={`Column ${cellIndex + 1}`}>{cell}</div>
+              <div key={cellIndex} className={`col col-${cellIndex + 1}`} data-label={`Column ${cellIndex + 1}`}>
+                {cell}
+              </div>
             ))}
           </li>
         ))}

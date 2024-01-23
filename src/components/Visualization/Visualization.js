@@ -50,11 +50,11 @@ const Visualization = () => {
 
   const renderExcelData = () => {
     switch (selectedScope) {
-      case 'scope1':
+      case 'Scope 1':
         return <ExcelFile />;
-      case 'scope2':
+      case 'Scope 2':
         return <ExcelFile2 />;
-      case 'scope3':
+      case 'Scope 3':
         return <ExcelFile3 />;  
       default:
         return <ExcelFile />;
@@ -63,11 +63,11 @@ const Visualization = () => {
 
   const renderBarGraph = () => {
     switch (selectedScope) {
-      case 'scope1':
+      case 'Scope 1':
         return <BarFile />;
-      case 'scope2':
+      case 'Scope 2':
         return <BarFile2 />;
-      case 'scope3':
+      case 'Scope 3':
         return <BarFile3 />;  
       default:
         return <BarFile />;
@@ -87,12 +87,12 @@ const Visualization = () => {
 
   const renderLineGraph = () => {
     switch (selectedScope) {
-      case 'scope1':
+      case 'Scope 1':
         return <LineGraph />;
-      case 'scope2':
+      case 'Scope 2':
         // Add your specific component for scope2 if needed
         return <LineGraph2 />;
-      case 'scope3':
+      case 'Scope 3':
         return <LineGraph3 />;  
       default:
         return <LineGraph />;
@@ -115,56 +115,58 @@ const Visualization = () => {
   };
 
   return (
-    <div className="visualization">
-      <div className="visualization-nav">
-        <span>Emissions Overview</span>
-        <span>Scope 1</span>
-        <span>Scope 2</span>
-        <span>Scope 3</span>
-        <div className="underline"></div>
-      </div>
-
-      <div className="visual-box">
-        <div className="visualization-header">
-          <div className="emissions-info">
-            <h2>Emissions</h2>
-            <p>Reporting Period: January - December 2023</p>
-            <p>Amount: ----- m2CO2e</p>
-            <div className="scope-options">
-              <label htmlFor="scopeSelect">Select Scope:</label>
-              <Select
-                id="scopeSelect"
-                value={{ value: selectedScope, label: selectedScope }}
-                onChange={(selectedOption) => setSelectedScope(selectedOption.value)}
-                options={[
-                  { value: 'scope1', label: 'Scope 1' },
-                  { value: 'scope2', label: 'Scope 2' },
-                  { value: 'scope3', label: 'Scope 3' },
-
-                  // ... other scopes as needed ...
-                ]}
-                styles={customStyles}
-              />
-            </div>
-            <div className="view-options">
-              <label htmlFor="viewSelect">Select View: </label>
-              <Select
-                id="viewSelect"
-                value={{ value: selectedView, label: selectedView }}
-                onChange={(selectedOption) => setSelectedView(selectedOption.value)}
-                options={[
-                  { value: 'sheet', label: 'Sheet' },
-                  { value: 'bar', label: 'Bar Graph' },
-                  { value: 'area', label: 'Area Chart' },
-                  { value: 'line', label: 'Line Graph' },
-                ]}
-                styles={customStyles}
-              />
-            </div>
-          </div>
+    <div className="visual-prime">
+      <div className="visualization">
+        <div className="visualization-nav">
+          <span>Emissions Overview</span>
+          <span>Scope 1</span>
+          <span>Scope 2</span>
+          <span>Scope 3</span>
+          <div className="underline"></div>
         </div>
 
-        <div className="graph">{renderView()}</div>
+        <div className="visual-box">
+          <div className="visualization-header">
+            <div className="emissions-info">
+              <h2>Emissions <span className="mte">(in mtCO<sub>2</sub>e)</span></h2>
+              <p>Reporting Period: January - December 2023</p>
+              
+              <div className="scope-options">
+                <label htmlFor="scopeSelect">Select Scope:</label>
+                <Select
+                  id="scopeSelect"
+                  value={{ value: selectedScope, label: selectedScope }}
+                  onChange={(selectedOption) => setSelectedScope(selectedOption.value)}
+                  options={[
+                    { value: 'Scope 1', label: 'Scope 1' },
+                    { value: 'Scope 2', label: 'Scope 2' },
+                    { value: 'Scope 3', label: 'Scope 3' },
+
+                    // ... other scopes as needed ...
+                  ]}
+                  styles={customStyles}
+                />
+              </div>
+              <div className="view-options">
+                <label htmlFor="viewSelect">Select View: </label>
+                <Select
+                  id="viewSelect"
+                  value={{ value: selectedView, label: selectedView }}
+                  onChange={(selectedOption) => setSelectedView(selectedOption.value)}
+                  options={[
+                    { value: 'sheet', label: 'Sheet' },
+                    { value: 'bar', label: 'Bar Graph' },
+                    // { value: 'area', label: 'Area Chart' },
+                    { value: 'line', label: 'Line Graph' },
+                  ]}
+                  styles={customStyles}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="graph">{renderView()}</div>
+        </div>
       </div>
     </div>
   );

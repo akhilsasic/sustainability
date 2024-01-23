@@ -1,8 +1,19 @@
+.visual-prime {
+  background-color: #F5F5F5;
+}
+
 .visualization {
     margin-top: 10vh;
-    padding: 1rem;
+    padding: 2rem;
     font-family: 'Jost', sans-serif;
     width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    /* width: calc(100% - 200px);
+    left: 200px;
+     */
+      
+    
   }
   
   .visualization-header {
@@ -19,31 +30,9 @@
     margin-bottom: 1rem;
     position: relative;
   }
-  .visualization {
-    margin-top: 10vh;
-    padding: 1rem;
-    font-family: 'Jost', sans-serif;
-    position: absolute;
-    width: calc(100% - 200px);
-    left: 200px;
-  }
+  
     
-    
-    .visualization-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-    
-    .visualization-nav {
-      display: flex;
-      gap: 2rem;
-      border-bottom: 2px solid #f0f0f0;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    
+  
     .visualization-nav span {
       position: relative;
       cursor: pointer;
@@ -79,10 +68,16 @@
     
   
     .emissions-info h2 {
+      font-weight: 475;
       margin-top: 0;
       margin-bottom: 0.5rem;
     }
     
+    .mte {
+      font-weight: 300;
+      font-size: medium;
+    }
+
     .emissions-info p {
       margin: 0;
     }

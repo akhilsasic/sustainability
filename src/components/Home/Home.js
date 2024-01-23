@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
        <div className="main-container">
-        <Sidebar/>
+        {/* <Sidebar/> */}
         <Visualization />     
        </div>   
     </div>
